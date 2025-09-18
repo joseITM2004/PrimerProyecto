@@ -16,7 +16,7 @@ enum options
 int main()
 {
     bool run = true;
-    album p[100];
+    album m[100];
     while (run)
     {
         switch (menu())
@@ -27,20 +27,19 @@ int main()
             int posc = 0;
             cin >> posc;
             cin.ignore();
-            agregarAlbum(p, posc);
+            agregarAlbum( m, posc);
             system("pause");
-            system("clear");
+            system("cls");
             break;
         }
-
         case opt2:
         {
             string nombres = " ";
             cout << "Ingrese el nombre del album:" << endl;
             cout << "nombre: ";
             getline(cin, nombres);
-            cin.ignore();
-            buscarRegistroPorAlbum(p, nombres);
+            //cin.ignore();
+            buscarRegistroPorAlbum(m, nombres,100);
             system("pause");
             system("cls");
             break;
@@ -52,8 +51,8 @@ int main()
             cout << "Ingrese el nombre del artista:" << endl;
             cout << "nombre: ";
             getline(cin, nombre);
-            cin.ignore();
-            buscarRegistroPorArtista(p, nombre);
+            //cin.ignore();
+            buscarRegistroPorArtista(m, nombre,100);
             system("pause");
             system("cls");
             break;
@@ -61,14 +60,14 @@ int main()
 
         case opt4:
         {
-            prom(p);
+            prom(m,100);
             system("pause");
             system("cls");
             break;
         }
         case opt5:
         {
-            mostrarTodo(p);
+            mostrarTodo(m,100);
             system("pause");
             system("cls");
             break;

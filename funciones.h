@@ -10,9 +10,8 @@ struct album
     int AñoLanza = 0;
 };
 
-void buscarRegistroPorAlbum(album p[], string name)
+void buscarRegistroPorAlbum(album p[], string name,int size)
 {
-    int size = sizeof(p) / sizeof(p[0]);
     for (int i = 0; i < size; i++)
     {
         if (p[i].NombreAlbum ==name )
@@ -28,9 +27,8 @@ void buscarRegistroPorAlbum(album p[], string name)
     cout << endl;
 }
 
-void llenarBaseDatos(album p[])
+void llenarBaseDatos(album p[],int size)
 {
-    int size = sizeof(p) / sizeof(p[0]);
     for (int i = 0; i < size; i++)
     {
         cout << "****Llenado de los datos del album: " << (i + 1) << "****" << endl;
@@ -53,9 +51,8 @@ void llenarBaseDatos(album p[])
 
     }
 }
-void buscarRegistroPorArtista(album p[], string Artista)
+void buscarRegistroPorArtista(album p[], string Artista,int size)
 {
-    int size = sizeof(p) / sizeof(p[0]);
     for (int i = 0; i < size; i++)
     {
         if (p[i].nombreArtista == Artista)
@@ -109,18 +106,15 @@ void agregarAlbum(album p[],int pos){
 
 }
 
-void prom(album p[]){
+void prom(album p[], int size ){
     double prome=0;
-    int size = sizeof(p) / sizeof(p[0]);
     for (int i = 0; i < size; i++){
         prome+=p[i].numeroDePistas;
     }
     prome/=size;
     cout<<"El promedio de las pistas es de: "<<prome<<endl;
 }
-void mostrarTodo(album p[]){
-    int size;
-    size=sizeof(p)/sizeof(p[0]);
+void mostrarTodo(album p[],int size){
     for (int i = 0; i < size; i++)
     {
         cout << "Nombre del album : " << p[i].NombreAlbum << endl;
