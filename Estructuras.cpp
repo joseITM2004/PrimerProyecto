@@ -38,7 +38,7 @@ int main()
             cout << "Ingrese el nombre del album:" << endl;
             cout << "nombre: ";
             getline(cin, nombres);
-            //cin.ignore();
+            cin.ignore();
             buscarRegistroPorAlbum(m, nombres,100);
             system("pause");
             system("cls");
